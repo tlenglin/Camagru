@@ -30,6 +30,32 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 	}
 }
 
+var iFilter = 0;
+var filters = [
+'grayscale',
+'sepia',
+'blur',
+'brightness',
+'contrast',
+'hue-rotate',
+'hue-rotate2',
+'hue-rotate3',
+'saturate',
+'invert',
+'none'
+];
+
+document.querySelector('#filter_button').addEventListener('click', function() {
+video.className = '';
+canvas.className = '';
+var effect = filters[iFilter++ % filters.length]; // Loop through the filters.
+if (effect) {
+video.classList.add(effect);
+canvas.classList.add(effect);
+document.querySelector('.container h3').innerHTML = 'Current filter is: ' + effect;
+}
+}, false);
+
 var data = {
 	'img' : null,
 	'size' : {
@@ -73,7 +99,7 @@ document.querySelector("#snap").addEventListener("click", function() {
 	var rootURI = '/' + location.pathname.split('/')[1]; // /camagru
 	//XMLHttpRequest
 	var xhr = new XMLHttpRequest();
-	xhr.open('POST', rootURI + '/server/saveImage.php');
+	xhr.open('POST', rootURI + '/server/montage.php');
 	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); //because POST method
 	xhr.send(JSON.stringify(data));
 	xhr.onreadystatechange = function() {
