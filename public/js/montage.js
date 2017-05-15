@@ -52,6 +52,7 @@ var effect = filters[iFilter++ % filters.length]; // Loop through the filters.
 if (effect) {
 video.classList.add(effect);
 canvas.classList.add(effect);
+data.filter = effect;
 document.querySelector('.container h3').innerHTML = 'Current filter is: ' + effect;
 }
 }, false);
@@ -61,7 +62,13 @@ var data = {
 	'size' : {
 		'width' : canvasWidth,
 		'height' : canvasHeight
-	}
+	},
+	'logo' : {
+		'name' : '',
+		'x' : '',
+		'y' : ''
+	},
+	'filter' : ''
 };
 
 function isNoWebcam(error) {
@@ -89,6 +96,8 @@ function isNoWebcam(error) {
 
 // Trigger photo take
 document.querySelector("#snap").addEventListener("click", function() {
+	data.logo.x = div.stylesheet.left;
+	data.logo.y = div.stylesheet.top;
 	if (webcam) {
 		context.drawImage(video, 0, 0, canvasWidth, canvasHeight);
 		data.img = canvas.toDataURL('image/jpeg', 1.0);
@@ -99,6 +108,7 @@ document.querySelector("#snap").addEventListener("click", function() {
 	var rootURI = '/' + location.pathname.split('/')[1]; // /camagru
 	//XMLHttpRequest
 	var xhr = new XMLHttpRequest();
+	console.log(toto);
 	xhr.open('POST', rootURI + '/server/montage.php');
 	xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded'); //because POST method
 	xhr.send(JSON.stringify(data));

@@ -22,6 +22,12 @@ $results = $stmt->fetchall(PDO::FETCH_ASSOC);
 		<div class="container">
 		<h3>Current filter is: None</h3>
 		<button id='filter_button'>Click here to change video filter</button>
+		<div id='objects'>
+						<ul class='objects'>
+							<li><img class='object action 42' src='./public/img/42.png' /></li>
+							<button type='button' class='btn disabled' id='snap' disabled>Take snapshot</button>
+						</ul>
+</div>
 		<div style="clear:both"></div>
 		</div>
 		<button type='button' class='btn disabled' id='snap'>Take snapshot</button>
