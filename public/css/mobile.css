@@ -1,0 +1,37 @@
+/********************
+    MEDIA-QUERIES
+*********************/
+
+@media only screen and (max-width:800px) {
+	#camera {
+		display: block;
+		width: 100%;
+		clear: both;
+	}
+	#tab-obj {
+		width: 100%;
+		clear: both;
+	}
+	.filter {
+		width: 90%;
+		margin: 5px auto;
+	}
+	#btn-logout {
+		width: 90%;
+		margin: 5px auto;
+	}
+	.gallery-single-small{
+		margin: auto;
+		min-width: 100px;
+		display: block;
+		width: 100%;
+	}
+	.likes-nb, #trash {
+		min-width: 20%;
+		margin: 5px auto;
+	}
+	i {
+		text-align: center;
+		margin: 5px 0%;
+	}
+}

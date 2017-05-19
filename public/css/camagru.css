@@ -1,0 +1,78 @@
+/*************************
+          APP
+**************************/
+
+.btn {
+	background-color: rgb(53, 154, 37);
+	border: 1px solid #177504;
+	box-shadow: 0px 0px 12px rgb(0, 157, 25);
+	font-size: 20px;
+	letter-spacing: 3px;
+	margin: 50px auto;
+	width: 90%;
+}
+
+.disabled {
+	background-color: rgb(231, 44, 32);
+	border: 1px solid #d60303;
+	box-shadow: 0px 0px 12px rgb(245, 23, 23);
+}
+
+#tab-filters, #tab-obj {
+	text-align: center;
+	font-size: 30px;
+}
+
+.objects li {
+	width: 15%;
+	display: inline-block;
+	margin: 10% 10%;
+}
+
+#camera, #top-left-img, #return-img {
+	width: 60%;
+	border-radius: 5px;
+	float: left;
+}
+
+#tab-obj {
+	width: 38%;
+	float: right;
+}
+
+#tab-filters {
+	clear: both;
+}
+
+.last-taken {
+	clear: both;
+}
+
+#return-img {
+	margin: 1% 25%;
+}
+
+.gallery-single-small {
+	width: 20%;
+	display: inline-block;
+	margin: 1% 2%;
+}
+
+.object {
+	cursor: pointer;
+}
+
+.filter {
+	background-color: grey;
+	border-color: white;
+	box-shadow: 0px 0px 12px white;
+}
+
+
+/*****************************
+            HIDDEN
+*****************************/
+
+.hidden {
+	display: none;
+}

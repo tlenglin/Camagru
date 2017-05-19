@@ -1,7 +1,7 @@
 <footer>
-	<ul>
+	<ul class='footer-links'>
+		<li class='left'><a href='#'>About us</a></li>
+		<li class='left'><a href='#'>Conditions</a></li>
 		<li id='footer-copyright'>Copyright -> tlenglin</li>
-		<li class='footer-link'><a href='#'>Contact</a></li>
-		<li class='footer-link'><a href='#'>Sitemap</a></li>
 	</ul>
 </footer>
