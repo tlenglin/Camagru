@@ -7,4 +7,8 @@
 	$stmt = $db->prepare('DELETE FROM img WHERE id = ?');
 	$stmt->bindParam(1, $img_id);
 	$stmt->execute();
+
+	$stmt = $db->prepare('DELETE FROM comments WHERE img_id = ?');
+	$stmt->bindParam(1, $img_id);
+	$stmt->execute();
 ?>

@@ -48,8 +48,8 @@
 		<img class='<?php echo $img['filter']; ?>' src='<?php echo $img['base_64']; ?>' alt='img-<?php echo $img['id'];?>'/>
 		<h3> &copy; <?php echo $user['login']; ?> </h3>
 		<ul>
-			<li class='likes-nb'><i class="fa fa-4x fa-heart-o" aria-hidden="true"></i><?php echo $img['likes']; ?></li>
-			<li class='likes-nb'><i class="fa fa-4x fa-comment-o" aria-hidden="true"></i><?php echo $img['comments_nb']; ?></li>
+			<li class='likes-nb'>Likes : <?php echo $img['likes']; ?></li>
+			<li class='likes-nb'>Comments : <?php echo $img['comments_nb']; ?></li>
 		</ul>
 	</div>
 	<div class='comments'>
@@ -72,10 +72,8 @@
 			<textarea rows='4' name='content' value='' placeholder='Your comment...' required></textarea>
 			<input class='hidden' name='img_id' value='<?php echo $id ?>'/>
 			<input class='hidden' name='user_id' value='<?php echo retrieveID($_SESSION['login']); ?>'/>
-			<input class='hidden' name='user_email' value='<?php echo $_SESSION['email']; ?>'/>
+			<input class='hidden' name='user_email' value='<?php echo retrieveEmail($_SESSION['login']); ?>'/>
 			<button type='submit' name='ok' id='submit-com'>Submit</button>
 		</form>
 	</div>
 </div>
-
- <script type='text/javascript' src='../public/js/single.js'></script>

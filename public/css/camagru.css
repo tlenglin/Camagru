@@ -1,4 +1,67 @@
 /*************************
+          NAV
+**************************/
+
+
+
+#nav {
+		margin:0;
+		padding:0;
+		background: rgb(34, 66, 124) url(nav_bg.jpg) 0 0 repeat-x;
+		width:100%;
+		float:left;
+		border:1px solid #42432d;
+		border-width:1px 0;
+	}
+	#nav li {
+		display:inline;
+		padding:0;
+		margin:0;
+		margin-left: 50px;
+	}
+	#nav a:link,
+	#nav a:visited {
+		color:#000;
+		background:rgb(34, 66, 124);
+		padding:20px 40px 4px 10px;
+		float:left;
+		width:auto;
+		border-right:1px solid #42432d;
+		text-decoration:none;
+		font:bold 1em/1em Arial, Helvetica, sans-serif;
+		text-transform:uppercase;
+		text-shadow: 2px 2px 2px #555;
+	}
+	#nav a:hover {
+		color:#000;
+		background: rgb(53, 122, 183);
+	}
+	#nav li:first-child a {
+		border-left:1px solid #42432d;
+	}
+	#home #nav-home a,
+	#gallery #nav-gallery a,
+	#shoot #nav-shoot a,
+	#user #nav-user a,
+	#logout #nav-logout a {
+		background:#e35a00;
+		color:#fff;
+		text-shadow:none;
+	}
+	#home #nav-home a:hover,
+	#gallery #nav-gallery a:hover,
+	#shoot #nav-shoot a:hover,
+	#user #nav-user a:hover,
+	#logout #nav-logout a:hover {
+		background:#e35a00;
+	}
+	#nav a:active {
+		background:#e35a00;
+		color:#fff;
+	}
+
+
+/*************************
           APP
 **************************/
 

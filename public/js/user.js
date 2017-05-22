@@ -4,7 +4,7 @@ var rootURI = '/' + location.pathname.split('/')[1];
 
 [].forEach.call(images, function (single) {
 	var imgID = single.id;
-	var trash = single.querySelector('i');
+	var trash = single.querySelector('#trash');
 
 	trash.addEventListener('click', function (e) {
 		xhr = new XMLHttpRequest();

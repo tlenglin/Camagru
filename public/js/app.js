@@ -58,7 +58,13 @@ video.className = '';
 canvas.className = '';
 var effect = filters[iFilter++ % filters.length]; // Loop through the filters.
 if (effect) {
-video.classList.add(effect);
+	if (webcam === false)
+	{
+		topLeftIMG.classList.add(effect);
+		video.classList.add('hidden');
+	}
+	else
+		video.classList.add(effect);
 canvas.classList.add(effect);
 canvas.classList.add('hidden');
 data.filter = effect;
@@ -79,6 +85,8 @@ var data = {
 	},
 	'filter' : ''
 };
+
+data.filter = '';
 
 [].forEach.call(photos, function (single) {
 	single.addEventListener('click', function () {
@@ -114,7 +122,8 @@ document.querySelector("#snap").addEventListener("click", function() {
 	data.logo.x = div.style.left;
 	data.logo.y = div.style.top;
 	canvas.classList.remove('hidden');
-	canvas.classList.add(data.filter);
+	if (data.filter !== '')
+		canvas.classList.add(data.filter);
 	if (webcam) {
 		context.drawImage(video, 0, 0, canvasWidth, canvasHeight);
 		data.img = canvas.toDataURL('image/jpeg', 1.0);
@@ -132,7 +141,8 @@ document.querySelector("#snap").addEventListener("click", function() {
 	xhr.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) { //response ready
 			//console.log(xhr.responseText);
-			returnIMG.classList.add(data.filter);
+			if (data.filter !== '')
+				returnIMG.classList.add(data.filter);
 			returnIMG.src = xhr.responseText;
 			returnIMG.style.display = 'block';
 		}

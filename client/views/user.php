@@ -33,7 +33,7 @@
 					<img class='<?php echo filter($photo['id']); ?>' src='<?php echo $photo['base_64'] ?>' alt='img-<?php echo $photo['id'] ?>'/>
 				</a>
 				<ul>
-					<li id='trash'></li>
+					<li id='trash'>Delete</li>
 				</ul>
 			</div>
 <?php	}
