@@ -1,8 +1,5 @@
 <?php
 
-require_once(__DIR__ . '/../../lib/requireAuth.php');
-requireAuth();
-
 $page = 'gallery';
 
 require_once(__DIR__ . '/../../config/database.php');
@@ -20,7 +17,7 @@ $stmt = $db->prepare('SELECT COUNT(*) as nb FROM img');
 $stmt->execute();
 $nb_photos = $stmt->fetchall(PDO::FETCH_ASSOC);
 
-$photosParPage = 2;
+$photosParPage = 10;
 //Nous allons maintenant compter le nombre de pages.
 $nombreDePages = ceil(intval($nb_photos[0]['nb'])/ $photosParPage);
 
@@ -54,9 +51,9 @@ foreach ($results as $photo)
 		$filter = 'none';
 	else
 		$filter = $photo['filter'];
-	echo '<li class=\'gallery-single\' id=\'' . $photo['id'] . '\'>By : ' . $login[0]['login'] . '<br /><a href=/Camagru/single/' . $photo['id'] . '><img class=' . $filter . ' src=' . $photo['base_64'] . ' /></a><br />
+	echo '<li class=\'gallery-single\' id=\'' . $photo['id'] . '\'>By : ' . $login[0]['login'] . '<br /><a href=/Camagru/single/' . $photo['id'] . '><img id= \'just_photo\' class=' . $filter . ' src=' . $photo['base_64'] . ' /></a><br />
 	<div><h4>Likes : </h4><span  class=\'likes-nb\'>' . $photo['likes'] . '</span></div><br />
-	<div><h4>Comments : </h4><span  class=\'comments-nb\'>' . $photo['comments_nb'] . '</span></div><br /></div></li>';
+	<div><h4>Comments : </h4><span  class=\'comments-nb\'>' . $photo['comments_nb'] . '</span></div><br /></li>';
 }
 echo '</ul></div><script type=\'text/javascript\' src=\'./public/js/gallery.js\'></script>';
 for($i=1; $i<=$nombreDePages; $i++)

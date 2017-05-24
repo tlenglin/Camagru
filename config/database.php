@@ -1,8 +1,8 @@
 <?php
 
-	$DB_DSN = 'mysql:host=sql11.freemysqlhosting.net;dbname=sql11174981;charset=utf8';
-	$DB_USER = 'sql11174981';
-	$DB_PASSWORD = 'fjNEAInjcp';
+	$DB_DSN = 'mysql:host=sql11.freemysqlhosting.net;dbname=sql11176229;charset=utf8';
+	$DB_USER = 'sql11176229';
+	$DB_PASSWORD = 'H9mxs3pvDR';
 
 	try {
 		$db = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);

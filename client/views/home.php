@@ -1,9 +1,13 @@
+<?php
+require_once(__DIR__ . '/../includes/nav.php');
+?>
+
 <div class='home'>
 	<div class='right home-right'>
 		<div class='form'>
 			<!-- Subsription form -->
 			<form id='subscription' method='post' action='./server/subscription.php'>
-				<h4>Sign up</h4>
+				<h4 class='text_form' >Sign up</h4>
 				<input id='signup-email' type='email' name='email' value='' placeholder='Email' autocomplete='off' required/>
 				<input id='signup-login' type='text' name='login' value='' placeholder='Login (3 - 32)' autocomplete='off' required/>
 				<input id='signup-passwd' type='password' name='password' value='' placeholder='Password (4 - 50)' autocomplete='off' required/>
@@ -13,7 +17,7 @@
 
 			<!-- Connection form -->
 			<form id='connection' method='post' action='./server/login.php'>
-				<h4>Sign-in</h4>
+				<h4 class='text_form'>Sign-in</h4>
 				<input id='login-login' type='text' name='login' value='' placeholder='Login' autocomplete='off' required/>
 				<input id='login-passwd' type='password' name='password' value='' placeholder='Password' autocomplete='off' required/>
 				<span ><a id='forgot' href='forgot'>Forgot your account?</a></span>

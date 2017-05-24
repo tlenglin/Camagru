@@ -7,4 +7,3 @@
 		</form>
 	</div>
 </div>
-<script type='text/javascript' src='./public/js/forgot.js'></script>

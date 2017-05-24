@@ -7,10 +7,13 @@
 
 	require_once(__DIR__ . '/../../config/database.php');
 	require_once(__DIR__ . '/../../lib/imageLib.php');
+	require_once(__DIR__ . '/../../lib/function.php');
 
 	//retrieve 4 last pics
+	$id_login = retrieveID($_SESSION['login']);
 	global $db;
-	$stmt = $db->prepare('SELECT id, base_64 FROM img ORDER BY dates desc LIMIT 4');
+	$stmt = $db->prepare('SELECT id, base_64 FROM img WHERE user_id = ? ORDER BY dates desc LIMIT 4');
+	$stmt->bindParam(1, $id_login);
 	$stmt->execute();
 	$results = $stmt->fetchall(PDO::FETCH_ASSOC);
 
@@ -30,7 +33,7 @@
 			<!-- hidden -->
 			<canvas class='hidden' id='canvas' width='' height=''></canvas>
 			<!-- div for image -->
-			<div id='logo' style='position:absolute;width:200px;height:200px;z-index:100;top:105px;left:7px;background:url("");background-size:cover;'>
+			<div id='logo' style='position:absolute;width:200px;height:200px;z-index:100;top:65px;left:7px;background:url("");background-size:cover;'>
 			</div>
 		</div>
 	</div>

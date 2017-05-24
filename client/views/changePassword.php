@@ -9,7 +9,7 @@
 <div class='success forgot'>
 	<div class='default'>
 		<h3>Hi <?php echo $login; ?> here you can change your password</h3>
-		<form class='change-password' method='POST' action='../../../server/changePassword.php'>
+		<form class='change-password' method='POST' action='../../server/changePassword.php'>
 			<input type='password' name='password' value='' placeholder='Type your new password' required/>
 			<input type='password' name='password-check' value='' placeholder='Verify your password' required/>
 			<input class='hidden' type='text' name='login' value='<?php echo $login; ?>' />

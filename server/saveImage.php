@@ -13,7 +13,7 @@
 	// if logo
 	if ($data->logo->name !== '') {
 		$logo = imagecreatefrompng(__DIR__ . '/../public/img/' . $data->logo->name . '.png');
-		imageMerge($img, $logo, intval($data->logo->x) - 7, intval($data->logo->y) - 105, $data->size->width, $data->size->height);
+		imageMerge($img, $logo, intval($data->logo->x) - 7, intval($data->logo->y) - 65, $data->size->width, $data->size->height);
 		imagedestroy($logo);
 	}
 

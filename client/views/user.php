@@ -30,7 +30,7 @@
 		foreach ($results as $photo) { ?>
 			<div class='gallery-single' id='<?php echo $photo['id'] ?>'>
 				<a href='single/<?php echo $photo['id'] ?>'>
-					<img class='<?php echo filter($photo['id']); ?>' src='<?php echo $photo['base_64'] ?>' alt='img-<?php echo $photo['id'] ?>'/>
+					<img id= 'just_photo' class='<?php echo filter($photo['id']); ?>' src='<?php echo $photo['base_64'] ?>' alt='img-<?php echo $photo['id'] ?>'/>
 				</a>
 				<ul>
 					<li id='trash'>Delete</li>

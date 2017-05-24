@@ -21,6 +21,9 @@ var div = document.querySelector('#logo');
 var filters = document.querySelectorAll('.filter');
 
 // Get access to the camera!
+
+//navigator.mozGetUserMedia a été remplacé par navigator.mediaDevices.getUserMedia
+
 if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 	if (!navigator.getUserMedia) { //Browser compatibility
 		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;

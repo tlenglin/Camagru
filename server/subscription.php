@@ -14,7 +14,7 @@
 		$_SESSION['login'] = $_POST['login'];
 	}
 
-	if (!isset($_POST['password']) || !isset($_POST['password-check']) || !checkPasswdMatches($_POST['password'], $_POST['password-check'])) {
+	if (!isset($_POST['password']) || !isset($_POST['password-check']) || !checkPasswdMatches($_POST['password'], $_POST['password-check']) || strlen($_POST['password']) < 4 || strlen($_POST['password']) > 50) {
 		$_SESSION['errors']++;
 	} else {
 		$_SESSION['password'] = $_POST['password'];

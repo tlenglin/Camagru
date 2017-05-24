@@ -9,7 +9,7 @@
 		<?php
 		if ($_SESSION['is_connected'] == 0)
 		{?>
-			<li id='nav-home' class='menu text-right <?php echo ($page === 'home') ? 'active' : '';?>'><a href="<?php echo getRootURI(); ?>home">Home</a></li>
+			<li id='nav-home' class='menu text-right <?php echo ($page === 'home') ? 'active' : '';?>'><a href="<?php echo getRootURI(); ?>">Home</a></li>
 		<?php
 		}?>
 		<li id='nav-gallery' class='menu text-right <?php echo ($page === 'gallery') ? 'active' : '';?>'><a href="<?php echo getRootURI(); ?>gallery">Gallery</a></li>
