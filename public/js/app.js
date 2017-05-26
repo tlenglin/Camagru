@@ -24,13 +24,12 @@ var filters = document.querySelectorAll('.filter');
 
 //navigator.mozGetUserMedia a été remplacé par navigator.mediaDevices.getUserMedia
 
-if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-	if (!navigator.getUserMedia) { //Browser compatibility
-		navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
-	}
-	// Not adding `{ audio: true }` since we only want video now
-	if (navigator.getUserMedia) {
-		navigator.getUserMedia({video: true}, function(stream) {
+navigator.getUserMedia = ( navigator.getUserMedia ||
+	navigator.webkitGetUserMedia || navigator.msGetUserMedia);
+if (navigator.userAgent.match(/^.*Firefox.*/) != null)
+{
+	navigator.mediaDevices.getUserMedia({video: true}).then(
+		function(stream) {
 			//set canvas size
 			canvas.setAttribute('width', canvasWidth);
 			canvas.setAttribute('height', canvasHeight);
@@ -38,6 +37,25 @@ if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
 			video.src = window.URL.createObjectURL(stream);
 			video.play();
 		}, isNoWebcam);
+}
+else if (navigator.getUserMedia)
+{
+	if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+		navigator.mozGetUserMedia = navigator.mediaDevices.getUserMedia;
+		if (!navigator.getUserMedia) { //Browser compatibility
+			navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia;
+		}
+		// Not adding `{ audio: true }` since we only want video now
+		if (navigator.getUserMedia) {
+			navigator.getUserMedia({video: true}, function(stream) {
+				//set canvas size
+				canvas.setAttribute('width', canvasWidth);
+				canvas.setAttribute('height', canvasHeight);
+				//canvas.classList.remove('hidden');
+				video.src = window.URL.createObjectURL(stream);
+				video.play();
+			}, isNoWebcam);
+		}
 	}
 }
 
